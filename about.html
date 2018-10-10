@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="styles.css" rel="stylesheet">
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            var includes = $('[data-include]');
+            jQuery.each(includes, function(){
+                var file = $(this).data('include') + '.html';
+                $(this).load(file);
+            });
+        });
+    </script>
+    </head>
+<body>
+<div class="header" data-include="header"></div>
+<div class="main">
+<div class="content">
+Контент страницы
+</div>
+<div class="main-footer" data-include="footer"></div>
+</div>
+</body>
+</html>
