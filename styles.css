@@ -11,9 +11,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    height: 100%;
+}
 body {
     color: #5D6063;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     text-align: center;
     font-family: Manrope;
@@ -32,8 +36,7 @@ body {
     display: flex;
     justify-content:center;
     flex-wrap: wrap;
-    font-family: Prata
-}
+    font-family: Prata}
 .nav-item {
     list-style: none;
 }
@@ -47,19 +50,26 @@ body {
     color: #42d1f4;
 }
 .main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     max-width: 70% ;
     background-color: #FFF;
     margin: 0 auto;
     }
-.main-footer {
-    margin: 0 auto;
-    text-align: center;
-    padding: 5px;}
-.main_content {
+.content {
+    flex: 1 0 auto;
     text-align: center;
     padding: 0 10px 0 10px;
     margin: 0 auto;
 }
+.main-footer {
+    flex: 0 0 auto;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+}
+
 h1, h2, h3{
     text-align: center;
     font-family: Prata;
@@ -98,18 +108,22 @@ li {
     text-align: left;
 }
 .timetable, .price-list {
-    padding-bottom: 40px;}
+    padding-bottom: 40px;
+}
 .table  {
-    max-width: 80%;
-    text-align: center;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
     margin: 0 auto;
     border: solid 1px gainsboro;
-font-size: 100%}
+    font-size: 100%;}
+
 .btn {
     position:relative;
     background: linear-gradient(0deg, #42d1f4, #c0f3f9);
     display: block;
-    border-color: #c0f3f9;}
+    border-color: #c0f3f9;
+    }
 .button_return_wrapper {
     padding: 10px;}
 .btn.btn-secondary {
@@ -118,7 +132,6 @@ font-size: 100%}
 }
 .button_return {
     color: white;
-
 }
 .button_return:hover {
     font-size: 120%;
@@ -152,10 +165,35 @@ font-size: 100%}
     }
 }
 @media screen and (max-width: 480px) {
-    .main {
+    .main, .navigation, .content, .timetable, .price-list, .contacts_wrapper {
         max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .timetable_table, .price-list_table  {
+        display: block;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        }
+    .contacts_wrapper {
+        overflow: hidden;
+        }
+    .map-block {
+        border: none;
     }
 }
+@media screen and (max-width: 980px) {
+    .main, .navigation, .content, .timetable, .price-list, .contacts_wrapper {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .timetable_table, .price-list_table  {
+        display: block;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    }
 
 
 
